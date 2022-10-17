@@ -11,7 +11,7 @@ public interface ClientsService {
 
     List<Client> getAllClients();
 
-    Optional<Client> getClientById(Long id);
+    Optional<Client> getClientByEmail(String email);
 
     Client addClient(Client client);
 

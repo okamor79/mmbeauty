@@ -36,9 +36,9 @@ public class ClientController {
         return clientsService.getAllClients();
     }
 
-    @GetMapping("/info/{id}")
-    public Optional<Client> getClientInfo(@PathVariable("id") Long id) {
-        return clientsService.getClientById(id);
+    @GetMapping("/info/{email}")
+    public Optional<Client> getClientInfo(@PathVariable("email") String email) {
+        return clientsService.getClientByEmail(email);
     }
 
     @PostMapping("/edit")

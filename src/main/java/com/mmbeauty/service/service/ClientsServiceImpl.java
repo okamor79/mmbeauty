@@ -32,8 +32,8 @@ public class ClientsServiceImpl implements ClientsService {
     }
 
     @Override
-    public Optional<Client> getClientById(Long id) {
-        return clientsRepository.findById(id);
+    public Optional<Client> getClientByEmail(String email) {
+        return Optional.ofNullable(clientsRepository.getClientByEmail(email));
     }
 
     @Override
