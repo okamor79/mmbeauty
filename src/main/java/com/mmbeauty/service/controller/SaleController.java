@@ -4,6 +4,7 @@ import com.mmbeauty.service.model.Sale;
 import com.mmbeauty.service.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,11 @@ public class SaleController {
     @GetMapping("/list")
     public List<Sale> getOrderList() {
         return saleService.getOrderList();
+    }
+
+    @GetMapping("/list/{id}")
+    public List<Sale> getClientOrders(@PathVariable("id") Long id) {
+        return null;
     }
 
 }

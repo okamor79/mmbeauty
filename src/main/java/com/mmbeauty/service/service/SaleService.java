@@ -15,4 +15,6 @@ public interface SaleService {
 
     Optional<Sale> getOrder(Long id);
 
+    List<Sale> getClientOrders(Long id);
+
 }

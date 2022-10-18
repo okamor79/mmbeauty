@@ -37,4 +37,9 @@ public class SaleServiceImpl implements SaleService{
     public Optional<Sale> getOrder(Long id) {
         return saleRepository.findById(id);
     }
+
+    @Override
+    public List<Sale> getClientOrders(Long id) {
+        return saleRepository.getClientOrders(id);
+    }
 }
