@@ -27,8 +27,9 @@ public class ClientController {
     }
 
     @PostMapping("/register")
-    public Client registerClient(@RequestBody Client client) {
-        return clientsService.addClient(client);
+    public ResponseEntity<Void> registerClient(@RequestBody Client client) {
+        clientsService.addClient(client);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/list")

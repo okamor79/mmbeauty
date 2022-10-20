@@ -37,9 +37,9 @@ public class ClientsServiceImpl implements ClientsService {
     }
 
     @Override
-    public Client addClient(Client client) {
+    public void addClient(Client client) {
         client.setCreated(new Date());
-        return clientsRepository.save(client);
+        clientsRepository.save(client);
     }
 
     @Override
