@@ -19,27 +19,8 @@ public class SaleServiceImpl implements SaleService{
     }
 
     @Override
-    public Sale newOrder(Sale sale) {
-        return saleRepository.save(sale);
-    }
-
-    @Override
-    public Sale editOrder(Sale sale) {
-        return null;
-    }
-
-    @Override
     public List<Sale> getOrderList() {
         return saleRepository.findAll();
     }
 
-    @Override
-    public Optional<Sale> getOrder(Long id) {
-        return saleRepository.findById(id);
-    }
-
-    @Override
-    public List<Sale> getClientOrders(Long id) {
-        return saleRepository.getClientOrders(id);
-    }
 }

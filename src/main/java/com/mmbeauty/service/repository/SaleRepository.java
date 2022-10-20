@@ -7,11 +7,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface SaleRepository extends JpaRepository<Sale, Long> {
-
-    @Query("SELECT s FROM Sale s WHERE s.client=:clidentid")
-    List<Sale> getClientOrders(@Param("client") Long id);
 
 }

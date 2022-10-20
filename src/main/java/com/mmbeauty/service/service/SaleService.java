@@ -7,14 +7,6 @@ import java.util.Optional;
 
 public interface SaleService {
 
-    Sale newOrder(Sale sale);
-
-    Sale editOrder(Sale sale);
-
     List<Sale> getOrderList();
-
-    Optional<Sale> getOrder(Long id);
-
-    List<Sale> getClientOrders(Long id);
 
 }

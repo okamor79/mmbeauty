@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/order")
@@ -25,10 +26,10 @@ public class SaleController {
     public List<Sale> getOrderList() {
         return saleService.getOrderList();
     }
-
+/*
     @GetMapping("/list/{id}")
-    public List<Sale> getClientOrders(@PathVariable("id") Long id) {
-        return null;
+    public Optional<Sale> getClientOrders(@PathVariable("id") Long id) {
+        return saleService.getClientOrders(id);
     }
-
+*/
 }
