@@ -23,4 +23,9 @@ public class SaleServiceImpl implements SaleService{
         return saleRepository.findAll();
     }
 
+    @Override
+    public void newOrder(Sale sale) {
+        saleRepository.save(sale);
+    }
+
 }

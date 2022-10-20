@@ -9,4 +9,6 @@ public interface SaleService {
 
     List<Sale> getOrderList();
 
+    void newOrder(Sale sale);
+
 }
