@@ -39,4 +39,9 @@ public class SaleServiceImpl implements SaleService{
         return true;
     }
 
+    @Override
+    public Optional<Sale> getOrder(Long id) {
+        return saleRepository.findById(id);
+    }
+
 }

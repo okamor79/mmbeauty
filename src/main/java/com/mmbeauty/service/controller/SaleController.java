@@ -37,6 +37,11 @@ public class SaleController {
         return saleService.getClientOrders(id);
     }
 
+    @GetMapping("/{id}")
+    public Optional<Sale> getOrderById(@PathVariable("id") Long id) {
+        return saleService.getOrder(id);
+    }
+
     @PostMapping("/edit")
     public ResponseEntity<Void> modifyOrder(@RequestBody Sale order) {
         saleService.modifyOrder(order);

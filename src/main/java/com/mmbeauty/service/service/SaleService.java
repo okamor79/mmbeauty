@@ -15,4 +15,6 @@ public interface SaleService {
 
     boolean modifyOrder(Sale sale);
 
+    Optional<Sale> getOrder(Long id);
+
 }
