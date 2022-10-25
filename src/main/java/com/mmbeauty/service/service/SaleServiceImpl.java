@@ -28,4 +28,15 @@ public class SaleServiceImpl implements SaleService{
         saleRepository.save(sale);
     }
 
+    @Override
+    public List<Sale> getClientOrders(Long id) {
+        return saleRepository.getOrdersByClient(id);
+    }
+
+    @Override
+    public boolean modifyOrder(Sale sale) {
+        saleRepository.save(sale);
+        return true;
+    }
+
 }

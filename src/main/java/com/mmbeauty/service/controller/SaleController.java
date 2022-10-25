@@ -32,4 +32,15 @@ public class SaleController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @GetMapping("/list/{id}")
+    public List<Sale> getClientOrederList(@PathVariable("id") Long id) {
+        return saleService.getClientOrders(id);
+    }
+
+    @PostMapping("/edit")
+    public ResponseEntity<Void> modifyOrder(@RequestBody Sale order) {
+        saleService.modifyOrder(order);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

@@ -11,4 +11,8 @@ public interface SaleService {
 
     void newOrder(Sale sale);
 
+    List<Sale> getClientOrders(Long id);
+
+    boolean modifyOrder(Sale sale);
+
 }

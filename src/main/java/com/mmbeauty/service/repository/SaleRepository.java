@@ -12,4 +12,7 @@ import java.util.Optional;
 @Repository
 public interface SaleRepository extends JpaRepository<Sale, Long> {
 
+    @Query("SELECT o FROM Sale o WHERE o.client = :clientid")
+    List<Sale> getOrdersByClient(@Param("clientid") Long id);
+
 }
