@@ -7,7 +7,6 @@ import java.util.Optional;
 
 public interface ClientsService {
 
-//    Boolean clientLogin(String login, String password);
     Client clientLogin(String login, String password);
 
     List<Client> getAllClients();
