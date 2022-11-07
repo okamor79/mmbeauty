@@ -19,11 +19,19 @@ public class ClientsServiceImpl implements ClientsService {
         this.clientsRepository = clientsRepository;
     }
 
+//    @Override
+//    public Boolean clientLogin(String login, String password) {
+//        Client clientInfo = clientsRepository.getClientByEmail(login);
+//        if (clientInfo == null) return false;
+//        return clientInfo.getEmail().contentEquals(login) ? (clientInfo.getPassword().contentEquals(password) ? true : false) : false;
+//    }
+
     @Override
-    public Boolean clientLogin(String login, String password) {
+    public Client clientLogin(String login, String password) {
         Client clientInfo = clientsRepository.getClientByEmail(login);
-        if (clientInfo == null) return false;
-        return clientInfo.getEmail().contentEquals(login) ? (clientInfo.getPassword().contentEquals(password) ? true : false) : false;
+        if (clientInfo == null) return null;
+        return clientInfo.getEmail().contentEquals(login) ? (clientInfo.getPassword().contentEquals(password) ? clientInfo : null) : null;
+
     }
 
     @Override

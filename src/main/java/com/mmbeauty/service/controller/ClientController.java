@@ -22,8 +22,15 @@ public class ClientController {
     }
 
     @GetMapping("/login/{login}/{password}")
-    public ResponseEntity<Void> ClientLogin(@PathVariable("login") String login, @PathVariable("password") String password) {
-        return clientsService.clientLogin(login, password) ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    public ResponseEntity<Client> ClientLogin(@PathVariable("login") String login, @PathVariable("password") String password) {
+        //return  clientsService.clientLogin(login, password) ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        Client cl = clientsService.clientLogin(login, password);
+        System.out.println(cl);
+        if (cl == null) {
+            return new ResponseEntity<Client>(HttpStatus.UNAUTHORIZED);
+        } else {
+            return ResponseEntity.accepted().body(cl);
+        }
     }
 
     @PostMapping("/register")
