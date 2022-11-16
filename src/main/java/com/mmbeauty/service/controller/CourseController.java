@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/course")
+@CrossOrigin(maxAge = 36000, allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 public class CourseController {
 
     private final CourseService courseService;

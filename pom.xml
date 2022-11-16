@@ -9,8 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mmbeauty</groupId>
-    <artifactId>service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>mmbeauty</artifactId>
+    <version>0.1.0</version>
     <packaging>war</packaging>
     <name>mmbeauty</name>
     <description>mmbeauty</description>

@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/client")
+@CrossOrigin(maxAge = 36000, allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 public class ClientController {
 
     private final ClientsService clientsService;
@@ -24,7 +25,6 @@ public class ClientController {
     @GetMapping("/login/{login}/{password}")
     public ResponseEntity<Client> ClientLogin(@PathVariable("login") String login, @PathVariable("password") String password) {
         Client cl = clientsService.clientLogin(login, password);
-        System.out.println(cl);
         if (cl == null) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         } else {

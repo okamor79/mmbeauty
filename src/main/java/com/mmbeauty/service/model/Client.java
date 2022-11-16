@@ -1,5 +1,6 @@
 package com.mmbeauty.service.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mmbeauty.service.model.enums.Roles;
 import com.mmbeauty.service.model.enums.Statuses;
 import lombok.*;
@@ -43,6 +44,7 @@ public class Client {
     private Date modify;
 
     @OneToMany(mappedBy = "client")
+    @JsonIgnore
     private List<Comment> comment;
 
 }
