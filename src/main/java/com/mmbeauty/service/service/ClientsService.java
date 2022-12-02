@@ -13,7 +13,7 @@ public interface ClientsService {
 
     Optional<Client> getClientByEmail(String email);
 
-    void addClient(Client client);
+    int addClient(Client client);
 
     Client editClient(Client client);
 

@@ -38,9 +38,15 @@ public class ClientsServiceImpl implements ClientsService {
     }
 
     @Override
-    public void addClient(Client client) {
-        client.setCreated(new Date());
-        clientsRepository.save(client);
+    public int addClient(Client client) {
+        int status = 0;
+        Client clientInfo = clientsRepository.getClientByEmail(client.getEmail());
+        if (clientInfo == null) {        client.setCreated(new Date());
+
+
+        clientsRepository.save(client);} else
+            status = -1;
+        return status;
     }
 
     @Override

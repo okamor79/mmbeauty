@@ -34,8 +34,11 @@ public class ClientController {
 
     @PostMapping("/register")
     public ResponseEntity<Void> registerClient(@RequestBody Client client) {
-        clientsService.addClient(client);
-        return new ResponseEntity<>(HttpStatus.OK);
+        int register = clientsService.addClient(client);
+        if (register != -1) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else
+            return new ResponseEntity<>((HttpStatus.CONFLICT));
     }
 
     @GetMapping("/list")
