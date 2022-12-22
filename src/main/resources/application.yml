@@ -1,0 +1,27 @@
+spring:
+    datasource:
+        password: CoolAdmin77
+        url: jdbc:mysql://localhost:3306/mmbeautycourse
+        username: root
+    jpa:
+        driverClassName: 'com.mysql.cj.jdbc.Driver '
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+        show-sql: false
+    mail:
+        default-encoding: utf-8
+        host: 10.10.2.207
+        port: 25
+        protocol: smtp
+        properties:
+            mail:
+                smtp:
+                    auth: false
+                    starttls:
+                        enable: false
+mail:
+    from:
+        'okamor@gmail.com'

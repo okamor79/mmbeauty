@@ -17,4 +17,7 @@ public interface ClientsService {
 
     Client editClient(Client client);
 
+    Optional<Client> resetPassword(String email);
+
 }
+

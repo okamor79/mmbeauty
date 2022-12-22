@@ -2,9 +2,8 @@ package com.mmbeauty.service.controller;
 
 import com.mmbeauty.service.model.Client;
 import com.mmbeauty.service.service.ClientsService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -49,6 +48,17 @@ public class ClientController {
     @GetMapping("/info/{email}")
     public Optional<Client> getClientInfo(@PathVariable("email") String email) {
         return clientsService.getClientByEmail(email);
+    }
+
+    @GetMapping("/reset/{email}")
+    public ResponseEntity<Void> resetPassword(@PathVariable("email") String email) {
+        Optional<Client> cl = clientsService.resetPassword(email);
+        if (cl == null) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        } else {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+
     }
 
     @PostMapping("/edit")
