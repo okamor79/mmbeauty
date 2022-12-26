@@ -13,15 +13,17 @@ spring:
         show-sql: false
     mail:
         default-encoding: utf-8
-        host: 10.10.2.207
-        port: 25
+        host: smtp.gmail.com
+        port: 587
         protocol: smtp
         properties:
             mail:
                 smtp:
-                    auth: false
+                    auth: true
                     starttls:
-                        enable: false
+                        enable: true
+        username: 'okamor@gmail.com'
+        password: 'ideabank$123'
 mail:
     from:
         'okamor@gmail.com'

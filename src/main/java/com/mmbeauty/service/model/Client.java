@@ -43,8 +43,4 @@ public class Client {
     @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm")
     private Date modify;
 
-    @OneToMany(mappedBy = "client")
-    @JsonIgnore
-    private List<Comment> comment;
-
 }

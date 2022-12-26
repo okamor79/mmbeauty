@@ -12,4 +12,8 @@ public interface ClientsRepository extends JpaRepository<Client, Long> {
     @Query("SELECT cl FROM Client cl WHERE cl.email = :client")
     Client getClientByEmail(@Param("client") String email);
 
+    @Query("SELECT cl FROM Client cl WHERE cl.id = :id")
+    Client getClientById(@Param("id") long id);
+
+
 }

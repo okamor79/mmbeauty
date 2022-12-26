@@ -19,5 +19,11 @@ public interface ClientsService {
 
     Optional<Client> resetPassword(String email);
 
+    String paymentForm(int id);
+
+    void checkPayment() throws Exception;
+
+
+
 }
 

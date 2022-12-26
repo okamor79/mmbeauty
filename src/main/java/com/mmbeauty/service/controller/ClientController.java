@@ -58,11 +58,23 @@ public class ClientController {
         } else {
             return new ResponseEntity<>(HttpStatus.OK);
         }
+    }
 
+    @PostMapping("/payment/{id}")
+    public String payment(@PathVariable("id") int id) {
+        return clientsService.paymentForm(id);
     }
 
     @PostMapping("/edit")
     public Client editClient(@RequestBody Client client) {
         return clientsService.editClient(client);
     }
+
+    @GetMapping("/checkpay")
+    public void getPaymentList() throws Exception {
+        clientsService.checkPayment();
+
+    }
+
+
 }

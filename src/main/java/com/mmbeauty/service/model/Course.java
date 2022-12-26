@@ -1,26 +1,25 @@
 package com.mmbeauty.service.model;
 
 import javax.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
 
 
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "course")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private String name;
 
@@ -40,7 +39,5 @@ public class Course {
 
     private int status;
 
-    @OneToMany(mappedBy = "course")
-    private List<Comment> comment;
 
 }

@@ -26,9 +26,4 @@ public class Comment {
     @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm")
     private Date created = new Date();
 
-    @ManyToOne
-    private Course course;
-
-    @ManyToOne
-    private Client client;
 }

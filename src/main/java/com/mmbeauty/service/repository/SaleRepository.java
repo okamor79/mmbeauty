@@ -15,4 +15,8 @@ public interface SaleRepository extends JpaRepository<Sale, Long> {
     @Query("SELECT o FROM Sale o WHERE o.client = :clientid")
     List<Sale> getOrdersByClient(@Param("clientid") Long id);
 
+    @Query("SELECT s FROM Sale s WHERE s.status = 0")
+    List<Sale> getAllUnpaidOrder();
+
+
 }
